@@ -147,7 +147,6 @@
                 .w3-hover-none:hover{box-shadow:none!important}
                 /* Colors */
                 .w3-custom,.w3-hover-custom:hover{color:#000!important;background-color: #193b17!important}
-                .w3-custom-ed,.w3-hover-custom-ed:hover{color:#000!important;background-color: #ff0000!important}
                 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
                 .w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
                 .w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
@@ -179,7 +178,6 @@
                 .w3-pale-yellow,.w3-hover-pale-yellow:hover{color:#000!important;background-color:#ffffcc!important}
                 .w3-pale-blue,.w3-hover-pale-blue:hover{color:#000!important;background-color:#ddffff!important}
                 .w3-text-custom,.w3-hover-text-custom:hover{color: #193b17!important}
-                .w3-text-custom-ed,.w3-hover-text-custom-ed:hover{color: #ff0000!important}
                 .w3-text-amber,.w3-hover-text-amber:hover{color:#ffc107!important}
                 .w3-text-aqua,.w3-hover-text-aqua:hover{color:#00ffff!important}
                 .w3-text-blue,.w3-hover-text-blue:hover{color:#2196F3!important}
@@ -207,7 +205,6 @@
                 .w3-text-light-grey,.w3-hover-text-light-grey:hover,.w3-text-light-gray,.w3-hover-text-light-gray:hover{color:#f1f1f1!important}
                 .w3-text-dark-grey,.w3-hover-text-dark-grey:hover,.w3-text-dark-gray,.w3-hover-text-dark-gray:hover{color:#3a3a3a!important}
                 .w3-border-custom,.w3-hover-border-custom:hover{border-color: #193b17!important}
-                .w3-border-custom,.w3-hover-border-custom:hover{border-color: #ff0000!important}
                 .w3-border-amber,.w3-hover-border-amber:hover{border-color:#ffc107!important}
                 .w3-border-aqua,.w3-hover-border-aqua:hover{border-color:#00ffff!important}
                 .w3-border-blue,.w3-hover-border-blue:hover{border-color:#2196F3!important}
