@@ -146,7 +146,7 @@
                 .w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
                 .w3-hover-none:hover{box-shadow:none!important}
                 /* Colors */
-                .w3-custom,.w3-hover-custom:hover{color:#000!important;background-color: #193b17!important}
+                .w3-custom,.w3-hover-custom:hover{color:#ca7ea4!important;background-color: #193b17!important}
                 .w3-amber,.w3-hover-amber:hover{color:#000!important;background-color:#ffc107!important}
                 .w3-aqua,.w3-hover-aqua:hover{color:#000!important;background-color:#00ffff!important}
                 .w3-blue,.w3-hover-blue:hover{color:#fff!important;background-color:#2196F3!important}
@@ -234,3 +234,4 @@
                 .w3-border-pale-red,.w3-hover-border-pale-red:hover{border-color:#ffe7e7!important}.w3-border-pale-green,.w3-hover-border-pale-green:hover{border-color:#e7ffe7!important}
                 .w3-border-pale-yellow,.w3-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.w3-border-pale-blue,.w3-hover-border-pale-blue:hover{border-color:#e7ffff!important}
                 .w3-pastel,.w3-hover-pastel:hover{color:#fff!important;background-color:#ca7ea4!important}
+                .w3-text-pastel,.w3-hover-text-custom:hover{color: #ca7ea4!important}
