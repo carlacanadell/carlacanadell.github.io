@@ -1,0 +1,18 @@
+.w3-leftbar{
+    border-left:6px solid #ccc!important
+}
+.w3-rightbar{
+    border-right:6px solid #ccc!important
+}
+.w3-topbar{
+    border-top:6px solid #ccc!important
+}
+.w3-bottombar{
+    border-bottom:6px solid #ccc!important
+}
+.w3-border-white,.w3-hover-border-white:hover{
+    border-color:#fff!important
+}
+.w3-border-custom,.w3-hover-border-custom:hover{
+    border-color: #193b17!important
+}

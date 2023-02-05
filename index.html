@@ -1,80 +1,379 @@
+<!-- === BEGIN HEADER === -->
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Carla Canadell</title>
-        <meta charset="UTF-8">
-        <meta name="description" content="Carla Canadell is a fashion designer from Barcelona.">
-        <meta name="keywords" content="Design, Carla, Canadell, Fashion, fashion designer, Barcelona">
-        <meta name="authors" content="Cris i Carla">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="icon.jpeg">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet'>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    </head>
-    <body>
-      <div class='container-fluid'>
-      <div style="margin-left:5%;margin-right:5%;margin-top:5%">
-      <div class="w3-sidebar w3-bar-block w3-responsive" style="width:20%">
-        <b><a href="index.html" class="w3-bar-item w3-button w3-hover-pastel w3-text-custom">main page</a></b>
-         <b><button class="w3-button w3-white w3-block w3-left-align w3-hover-pastel w3-text-custom" onclick="myAccFunc()">
-                 collections <i class="fa fa-caret-down"></i>
-                 </button></b>
-                 <div id="demoAcc" class="w3-hide w3-white">
-                     <a href="collection.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">Anaïs</a>
-                 </div>
-        <b><button class="w3-button w3-white w3-block w3-left-align w3-hover-pastel w3-text-custom" onclick="myAccFunc2()">
-                  editorials <i class="fa fa-caret-down"></i>
-                  </button></b>
-                  <div id="demoAcc2" class="w3-hide w3-white">
-                      <a href="editorial.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">Anaïs</a>
-                      <a href="editorial2.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">A stone to earth</a>
-                      <a href="editorial3.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">Sapta Sindhu</a>
-                      <a href="editorial4.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">Human Tissues</a>
-                      <a href="editorial5.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">New Breath</a>
-                      <a href="editorial6.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">Enjoy the Silence</a>
-                      <a href="editorial7.html" target="_blank" class="w3-bar-item w3-button w3-small w3-hover-pastel w3-text-custom">Wish me Luck</a>
-                  </div>
-         <b><a href="fashionfilm.html" class="w3-bar-item w3-button w3-hover-pastel w3-text-custom">fashion film</a></b>
-         <b><a href="portfolio.html" class="w3-bar-item w3-button w3-hover-pastel w3-text-custom">portfolio</a></b>
-         <b><a href="https://www.instagram.com/carla.canadell/" target="_blank" class="w3-button w3-white w3-block w3-left-align w3-hover-pastel w3-text-custom">instagram</a></b>
-         <b><a href="mailto:carlacanadellm@gmail.com" class="w3-bar-item w3-button w3-hover-pastel w3-text-custom">contact</a></b>
-         <b><a href="https://shop.carlacanadell.com" target="_blank" class="w3-bar-item w3-button w3-hover-custom w3-text-pastel">SHOP</a></b>
-      </div>
-        <div style="margin-left: 15%">
-          <div class="w3-jumbo w3-text-custom w3-center">carla canadell</div>
-          <div class="w3-responsive w3-center" style="max-width:100%;height:auto;">
-            <a data-flickr-embed="true" href="https://www.flickr.com/photos/185107651@N08/48913069067/in/album-72157711373418361/" title="carla27"><img src="https://live.staticflickr.com/65535/48913069067_ddafe9f65f_c.jpg" width="533" height="800" style="max-width:100%;height:auto;" alt="carla27"></a>
-          </div>
-          </div>
-        </div>
-      </div>
-          <script>
-            function myAccFunc() {
-                var x = document.getElementById("demoAcc");
-                if (x.className.indexOf("w3-show") == -1) {
-                  x.className += " w3-show";
-                  x.previousElementSibling.className += " w3-green";
-                } else {
-                  x.className = x.className.replace(" w3-show", "");
-                  x.previousElementSibling.className =
-                  x.previousElementSibling.className.replace(" w3-green", "");
-                }
-              }
-
-            function myAccFunc2() {
-              var x = document.getElementById("demoAcc2");
-              if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-                x.previousElementSibling.className += " w3-green";
-              } else {
-                x.className = x.className.replace(" w3-show", "");
-                x.previousElementSibling.className =
-                x.previousElementSibling.className.replace(" w3-green", "");
-              }
-            }
-        </script>
-    </body>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<!-- Title -->
+	<title>Carla Canadell - Home</title>
+	<!-- Meta -->
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+	<!-- Favicon -->
+	<link href="favicon.html" rel="shortcut icon">
+	<link rel="icon" href="icon.jpeg">
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.css" rel="stylesheet">
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/nexus.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/custom.css" rel="stylesheet">
+	<!-- Google Fonts-->
+	<link href='https://fonts.googleapis.com/css?family=Cardo' rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div id="pre_header" class="visible-lg"></div>
+	<div id="header" class="container">
+		<div class="row">
+			<!-- Logo -->
+			<div class="logo">
+				<a href="index.html" title="">
+					<img src="assets/img/logo_lletra1.jpg" alt="Logo" width="300px" />
+				</a>
+			</div>
+			<!-- End Logo -->
+			<!-- Top Menu -->
+			<div class="col-md-12 margin-top-30">
+				<div id="hornav" class="pull-right visible-lg">
+					<ul class="nav navbar-nav">
+						<!-- <li><a href="index.html">Home</a></li> -->
+						<li><span><a href="pages-about-me.html">About</a></span>
+						<li><span>Collections</span>
+							<ul>
+								<li><a href="pages-collection-anais.html">Anaïs</a></span>
+								</li>
+								<li><a href="pages-collection-knitwear.html">Knitwear</a></span>
+								</li>
+								<li><a href="pages-collection-archive.html">Archive</a></span>
+								</li>
+							</ul>
+						</li>
+						<li><span>Editorials</span>
+							<ul>
+								<li><a href="pages-editorial-anais.html">Anaïs</a></li>
+								<li><a href="pages-editorial-stone.html">A Stone to Earth</a></li>
+								<li><a href="pages-editorial-sapta.html">Sapta Sindhu.</a></li>
+								<li><a href="pages-editorial-human.html">Human Tissues</a></li>
+								<li><a href="pages-editorial-breath.html">New Breath</a></li>
+								<li><a href="pages-editorial-silence.html">Enjoy the Silence</a></li>
+								<li><a href="pages-editorial-luck.html">Wish me luck</a></li>
+							</ul>
+						</li>
+						<li><span><a href="fashion-film.html">Fashion film</a></span>
+						</li>
+						<li><span><a href="portfolio.html">Portfolio</a></span>
+						</li>
+						<!-- <li><span>Instagram</span>
+							<ul>
+								<li><a href="blog-list.html">Blog</a></li>
+								<li><a href="blog-single.html">Blog Single Item</a></li>
+							</ul>
+						</li> -->
+						<!-- <li><a href="contact.html">Contact</a></li> -->
+						<li><span><a href="https://shop.carlacanadell.com" target="_blank">SHOP</a></span>
+						</li>
+					</ul>				</div>
+				</div>
+				<div class="clear"></div>
+				<!-- End Top Menu -->
+			</div>
+		</div>
+		<!-- === END HEADER === -->
+		<!-- === CONTENT === -->
+		<div id="content" class="container">
+			<div class="row margin-top-30">
+				<div class="col-md-12 text-center">
+					<h2 class"text-center">Fashion &amp; Knitwear Designer</h2>
+					<p class"text-center">Based in Barcelona</p>
+				</div>
+			</div>
+			<div class="row margin-top-10">
+				<!-- Carousel Slideshow -->
+				<div id="carousel-example" class="carousel slide" data-ride="carousel">
+					<!-- Carousel Indicators -->
+					<ol class="carousel-indicators">
+						<li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+						<li data-target="#carousel-example" data-slide-to="1"></li>
+						<li data-target="#carousel-example" data-slide-to="2"></li>
+					</ol>
+					<!-- End Carousel Indicators -->
+					<!-- Carousel Images -->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="assets/img/slideshow/slide1.jpg">
+						</div>
+						<div class="item">
+							<img src="assets/img/slideshow/slide2.jpg">
+						</div>
+						<div class="item">
+							<img src="assets/img/slideshow/slide3.jpg">
+						</div>
+						<div class="item">
+							<img src="assets/img/slideshow/slide4.jpg">
+						</div>
+						<div class="item">
+							<img src="assets/img/slideshow/slide5.jpg">
+						</div>
+					</div>
+					<!-- End Carousel Images -->
+					<!-- Carousel Controls -->
+					<a class="left carousel-control" href="#carousel-example" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left"></span>
+					</a>
+					<a class="right carousel-control" href="#carousel-example" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right"></span>
+					</a>
+					<!-- End Carousel Controls -->
+				</div>
+				<!-- End Carousel Slideshow -->
+			</div>
+			<!-- <div class="row margin-vert-30">
+				<div class="col-md-6 margin-top-30">
+					<a data-flickr-embed="true" href="https://www.flickr.com/photos/185107651@N08/48913069067/in/album-72157711373418361/" title="carla27"><img src="https://live.staticflickr.com/65535/48913069067_ddafe9f65f_c.jpg" style="max-width:100%;height:auto;" alt="carla27"></a>	
+				</div>
+				<div class="col-md-6 margin-top-30">
+					<a data-flickr-embed="true" href="https://www.flickr.com/photos/185107651@N08/48913069067/in/album-72157711373418361/" title="carla27"><img src="https://live.staticflickr.com/65535/48913069067_ddafe9f65f_c.jpg" style="max-width:100%;height:auto;" alt="carla27"></a>	
+				</div>
+			</div> -->
+			<br>
+			<div class="row margin-vert-30">
+				<!-- Main Text -->
+				<div class="col-md-12">
+					<h3>Collections</h3>
+					<!-- <p>Executive Master in Knitting Desing at Academie Royal de Beux Arts in Brussels.</p>
+					<a class="btn btn-default" href="pages-about-me.html">
+						Read More
+						<i class="fa-chevron-right"></i>
+					</a> -->
+				</div>
+				<!-- End Main Text -->
+			</div> 
+			<div class="row">
+				<!-- Portfolio -->
+				<!-- Portfolio Item -->
+				<div class="portfolio-item col-md-6 animate fadeIn">
+					<div class="image-hover">
+						<a href="#">
+							<figure>
+								<img src="assets/img/slideshow/slide1.jpg" alt="image1">
+								<div class="overlay">
+									<a class="expand" href="pages-collection-anais.html">Image Link</a>
+								</div>
+							</figure>
+							<h3 class="margin-top-20">Anaïs</h3>
+							<p class="margin-top-10 margin-bottom-20">"Life is a process of becoming, a combination of states we have to go through. Where people fail is that they wish to elect a state and remain in it. This a kind of death."</p>
+							<div class="btn btn-default">
+								<a class="info" href="pages-collection-anais.html">See more</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //Portfolio Item// -->
+				<!-- Portfolio Item -->
+				<div class="portfolio-item col-md-6 animate fadeIn">
+					<div class="image-hover">
+						<a href="#">
+							<figure>
+								<img src="assets/img/slideshow/slide2.jpg" alt="image2">
+								<div class="overlay">
+									<a class="expand" href="pages-collection-knitwear.html">Image Link</a>
+								</div>
+							</figure>
+							<h3 class="margin-top-20">Knitwear</h3>
+							<p class="margin-top-10 margin-bottom-20">The body as a powerful tool for your own freedom. Inspired by 1920s tennis player Suzanne Langlen. A metaphor for the evolution of sportswear.</p>
+							<div class="btn btn-default">
+								<a class="info" href="pages-collection-knitwear.html">See more</a>
+							</div>
+						</a>
+					</div>
+				</div>
+				<!-- //Portfolio Item// -->
+				<!-- Portfolio Item -->
+				<!-- <div class="portfolio-item col-sm-4 animate fadeIn">
+					<div class="image-hover">
+						<a href="#">
+							<figure>
+								<img src="assets/img/frontpage/filler3.jpg" alt="image3">
+								<div class="overlay">
+									<a class="expand" href="#">Image Link</a>
+								</div>
+							</figure>
+							<h3 class="margin-top-20">Quam putamus</h3>
+							<p class="margin-top-10 margin-bottom-20">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+							<div class="btn btn-default">
+								<a class="info" href="http://localhost/build/substance/index.php/quam-nunc-putamus">Read more</a>
+							</div>
+						</a>
+					</div>
+				</div> -->
+				<!-- //Portfolio Item// -->
+				<!-- End Portfolio -->
+			</div>
+			<!-- <div class="row">
+				<h2 class="text-center margin-top-10">Nulla in enim quis ipsum pulvinar imperdiet vitae nec velit..</h2>
+				<p class="text-center margin-bottom-30">Aenean venenatis egestas iaculis. Donec non urna quam. Nullam consectetur condimentum dolor at bibendum.</p>
+			</div> -->
+		</div>
+		<!-- === END CONTENT === -->
+		<!-- === BEGIN FOOTER === -->
+		<div id="base">
+			<div class="container padding-vert-30">
+				<div class="row">
+					<!-- Thumbs Gallery -->
+					<!-- <div class="col-md-3 margin-bottom-20">
+						<h3 class="margin-bottom-10">Portfolio Highlights</h3>
+						<div class="thumbs-gallery">
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image1.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image1.jpg" alt="image1.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image2.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image2.jpg" alt="image2.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image3.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image3.jpg" alt="image3.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image4.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image4.jpg" alt="image4.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image6.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image6.jpg" alt="image6.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image7.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image7.jpg" alt="image7.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image8.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image8.jpg" alt="image8.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image9.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image9.jpg" alt="image9.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image92.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image92.jpg" alt="image92.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image94.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image94.jpg" alt="image94.jpg">
+							<i></i></a>
+							
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image95.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image95.jpg" alt="image95.jpg">
+							<i></i></a>
+							
+							<a class="thumbBox" rel="lightbox-thumbs" href="assets/img/thumbsgallery/image96.jpg">
+								<img src="assets/img/thumbsgallery/thumbs/image96.jpg" alt="image96.jpg">
+							<i></i></a>
+							
+							</div>			<div class="clearfix"></div>
+						</div> -->
+						<!-- End Thumbs Gallery -->
+						<!-- Contact Details -->
+						<div class="col-md-3 margin-bottom-20">
+							<h3 class="margin-bottom-10">Contact Details</h3>
+							<p>Made sustainably in Barcelona<br /></p>
+							<p>Email: <a href="mailto:carlacanadellm@gmail.com">carlacanadellm@gmail.com</a><br />
+							Website: <a href="http://carlacanadell.com/">carlacanadell.com</a></p>
+						</div>
+						<!-- End Contact Details -->
+						<!-- Sample Menu -->
+						<!-- <div class="col-md-3 margin-bottom-20" >
+							<h3 class="margin-bottom-10">Sample Menu</h3>
+							<ul class="menu">
+								<li>
+									<a class="fa-tasks" href="#" >Placerat facer possim</a>
+								</li>
+								<li>
+									<a class="fa-users" href="#" >Quam nunc putamus</a>
+								</li>
+								<li>
+									<a class="fa-signal" href="#" >Velit esse molestie</a>
+								</li>
+								<li>
+									<a class="fa-coffee" href="#">Nam liber tempor</a>
+								</li>
+							</ul>
+							<div class="clearfix"></div>
+							
+						</div> -->
+						<!-- End Sample Menu -->
+						<!-- Disclaimer -->
+						<!-- <div class="col-md-3 margin-bottom-20">
+							<h3 class="margin-bottom-10">Disclaimer</h3>
+							<p>All stock images on this template demo are for presentation purposes only, intended to represent a live site and are not included with this template. Links are provided if you wish to purchase them from their copyright owners.</p>
+							<div class="clearfix"></div>
+						</div> -->
+						<!-- End Disclaimer -->
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Footer Menu -->
+			<!-- <div id="footer">
+				<div class="container">
+					<div class="row">
+						<div id="copyright" class="col-md-4">
+							<p>(c) 2014 Your Copyright Info</p>
+						</div>
+						<div id="footermenu" class="col-md-8">
+							<ul class="list-unstyled list-inline pull-right">
+								<li>
+									<a href="#" target="_blank" >Sample Link</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" >Sample Link</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" >Sample Link</a>
+								</li>
+								<li>
+									<a href="#" target="_blank" >Sample Link</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<!-- End Footer Menu -->
+	</div>
+</div>
+<!-- JS -->
+<script type="text/javascript" src="assets/js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/js/scripts.js"></script>
+<!-- Isotope - Portfolio Sorting -->
+<script type="text/javascript" src="assets/js/jquery.isotope.js" type="text/javascript"></script>
+<!-- Mobile Menu - Slicknav -->
+<script type="text/javascript" src="assets/js/jquery.slicknav.js" type="text/javascript"></script>
+<!-- Animate on Scroll-->
+<script type="text/javascript" src="assets/js/jquery.visible.js" charset="utf-8"></script>
+<!-- Slimbox2-->
+<script type="text/javascript" src="assets/js/slimbox2.js" charset="utf-8"></script>
+<!-- Modernizr -->
+<script src="assets/js/modernizr.custom.js" type="text/javascript"></script>
+<!-- End JS -->
+</body>
 </html>
+<!-- === END FOOTER === -->
