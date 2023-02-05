@@ -588,7 +588,7 @@ h1.logo-text a {
   color: #193B17;
   display: block;
   font-family: 'Cardo', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 1px;
   line-height: 1.4em;
   padding: 8px 18px;
@@ -912,13 +912,14 @@ ul {
 .slicknav_menu .slicknav_menutxt {
   color: #FFF;
   font-weight: bold;
+  font-family: "Cardo";
 }
 /* Button Lines */
 .slicknav_menu .slicknav_icon-bar {
   background-color: #f5f5f5;
 }
 .slicknav_menu {
-  background: #363539;
+  background: #224321;
   padding: 5px;
 }
 .slicknav_nav {
@@ -946,15 +947,15 @@ ul {
   margin: 0;
 }
 .slicknav_nav li {
-  background: #2a2a2a;
+  background: #224321;
   color: #ffffff;
 }
 .slicknav_nav li li {
-  background: #3a3a3a;
+  background: #224321;
   text-indent: 10px;
 }
 .slicknav_nav li li li {
-  background: #444444;
+  background: #224321;
   text-indent: 20px;
 }
 .slicknav_nav li li a {
@@ -987,10 +988,10 @@ h2 {
   margin: 0 0 10px;
   color: #363539;
   font-family: 'Cardo', sans-serif;
-  font-size: 32px;
+  font-size: 36px;
 }
 h3 {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 300;
   padding: 0;
   font-family: 'Cardo', sans-serif;
@@ -1015,6 +1016,7 @@ a {
   -moz-transition: color 0.15s ease-in;
   -o-transition: color 0.15s ease-in;
   transition: color 0.15s ease-in;
+  font-size: 16px;
 }
 a:hover {
   text-decoration: none;
@@ -1022,6 +1024,7 @@ a:hover {
 p {
   margin-bottom: 16px;
   font-family: 'Cardo';
+  font-size: 18px;
 }
 hr {
   border-color: #d1d1d1;
