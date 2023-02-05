@@ -1017,6 +1017,7 @@ a {
   -o-transition: color 0.15s ease-in;
   transition: color 0.15s ease-in;
   font-size: 16px;
+  color: #193B17;
 }
 a:hover {
   text-decoration: none;
