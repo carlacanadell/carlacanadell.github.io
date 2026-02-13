@@ -1,46 +1,81 @@
-/* #Tablet (Landscape)
-================================================== */
+/* ===================================
+   Responsive Styles - Carla Canadell
+   =================================== */
 
+/* Tablet (Landscape) */
 @media only screen and (max-width: 1024px) {
-
-.wrapper960, .content_background, #header {margin: 0 auto;}
-
-/* Disable CSS animations */
-.animated {
-    -webkit-animation-duration: 0;
-    animation-duration: 0;
-    -webkit-animation-delay: 0;
-    animation-delay: 0;
+    .wrapper960, .content_background, #header {
+        margin: 0 auto;
+    }
+    /* Disable CSS animations */
+    .animated {
+        -webkit-animation-duration: 0;
+        animation-duration: 0;
+        -webkit-animation-delay: 0;
+        animation-delay: 0;
+    }
 }
 
-}
-
-/* #Tablet (Portrait)
-================================================== */
-    
+/* Tablet (Portrait) */
 @media only screen and (max-width: 959px) {
-
-
+    .portfolio-item {
+        margin-bottom: 30px;
+    }
 }
 
-/* #Mobile (Landscape)
-================================================== */
-
+/* Mobile (Landscape) */
 @media only screen and (max-width: 767px) {
-
-/* Slogan Adjust */
-p.site-slogan {
-    right: 0px;
+    /* Slogan Adjust */
+    p.site-slogan {
+        right: 0px;
+    }
+    /* Better spacing for mobile */
+    .margin-vert-30 {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    /* Make gallery images full width on mobile */
+    .gallery-img {
+        margin-bottom: 15px;
+    }
+    /* Footer columns stack nicely */
+    #base .col-md-4 {
+        margin-bottom: 25px;
+    }
+    /* Center footer content on mobile */
+    #base .list-inline {
+        text-align: left;
+    }
+    /* Portfolio items breathe on mobile */
+    .portfolio-item {
+        margin-bottom: 40px;
+    }
+    /* Press image full width */
+    #content img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
-}
-
-/*  #Mobile (Portrait)
-================================================== */
-
+/* Mobile (Portrait) */
 @media only screen and (max-width: 440px) {
-
-	
+    /* Tighter header */
+    #header {
+        height: auto;
+        min-height: 80px;
+    }
+    .logo img {
+        max-width: 200px;
+    }
+    /* Smaller headings on tiny screens */
+    h2 {
+        font-size: 1.5em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+    /* Better touch target for buttons */
+    .btn {
+        padding: 10px 20px;
+    }
 }
-
-
