@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Carla Canadell - Knitwear Collection</title>
+	<title>Carla Canadell - Shop</title>
 	<meta charset="utf-8" />
-	<meta name="description" content="Knitwear Collection (2022) by Carla Canadell. Inspired by 1920s tennis player Suzanne Lenglen, a metaphor for the evolution of sportswear.">
+	<meta name="description" content="Shop knitwear and fashion pieces by Carla Canadell. Handcrafted, sustainably made in Barcelona.">
 	<meta name="author" content="Carla Canadell">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- Favicon -->
@@ -18,26 +18,80 @@
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 	<style>
-		.gallery-img {
+		.product-card {
+			margin-bottom: 40px;
+			text-align: center;
+		}
+		.product-card img {
 			width: 100%;
-			height: auto;
-			margin-bottom: 20px;
+			height: 320px;
+			object-fit: cover;
+			background-color: #f0ede8;
 			transition: opacity 0.3s ease;
 		}
-		.gallery-img:hover {
+		.product-card img:hover {
 			opacity: 0.85;
+		}
+		.product-card h4 {
+			margin-top: 15px;
+			margin-bottom: 5px;
+			font-size: 1.1em;
+			letter-spacing: 0.5px;
+		}
+		.product-card .price {
+			color: #193b17;
+			font-size: 1em;
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
+		.product-card .product-tag {
+			display: inline-block;
+			font-size: 0.75em;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #999;
+		}
+		.shop-intro {
+			text-align: center;
+			max-width: 650px;
+			margin: 0 auto 40px auto;
+		}
+		.shop-intro p {
+			font-size: 1.05em;
+			line-height: 1.8;
+		}
+		.contact-banner {
+			text-align: center;
+			background-color: #193b17;
+			color: #fff;
+			padding: 40px 20px;
+			margin-top: 20px;
+			margin-bottom: 0;
+		}
+		.contact-banner h3 {
+			color: #fff;
+			margin-bottom: 10px;
+		}
+		.contact-banner p {
+			color: rgba(255,255,255,0.85);
+			margin-bottom: 20px;
+		}
+		.contact-banner a.btn {
+			background-color: #fff;
+			color: #193b17;
+			border: none;
+			padding: 12px 30px;
+			font-size: 0.95em;
+			letter-spacing: 0.5px;
+			transition: background-color 0.3s ease, color 0.3s ease;
+		}
+		.contact-banner a.btn:hover {
+			background-color: #f0ede8;
+			color: #193b17;
+			text-decoration: none;
 		}
 	</style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5F90YSV94B"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5F90YSV94B');
-</script>
 <body>
 	<div id="pre_header" class="visible-lg"></div>
 	<div id="header" class="container">
@@ -74,38 +128,53 @@
 	<div id="content" class="container">
 		<div class="row margin-vert-30">
 			<div class="col-md-12">
-				<h2>Knitwear &mdash; 2022</h2>
+				<h2 class="text-center">Shop</h2>
+				<div class="shop-intro">
+					<p>Each piece is handcrafted and sustainably made in Barcelona. All items are produced in limited quantities to ensure quality and reduce waste.</p>
+				</div>
 			</div>
 		</div>
-		<div class="row margin-top-30">
-			<div class="col-md-4">
-				<img class="gallery-img" src="assets/img/knitwear/knit1.jpg" alt="Knitwear collection piece 1">
+		<div class="row">
+			<div class="col-md-4 col-sm-6 product-card animate fadeIn">
+				<img src="media/shop/academia_top.jpg" alt="Academia Top">
+				<h4>Academia Top</h4>
+				<p class="price">&euro;125</p>
 			</div>
-			<div class="col-md-4">
-				<img class="gallery-img" src="assets/img/knitwear/knit2.jpg" alt="Knitwear collection piece 2">
+			<div class="col-md-4 col-sm-6 product-card animate fadeIn">
+				<img src="media/shop/beetleglass1.jpg" alt="Beetleglass">
+				<h4>Beetleglass</h4>
+				<p class="price">&euro;25</p>
 			</div>
-			<div class="col-md-4">
-				<img class="gallery-img" src="assets/img/knitwear/knit3.jpg" alt="Knitwear collection piece 3">
-			</div>
-		</div>
-		<div class="row margin-top-30">
-			<div class="col-md-6">
-				<img class="gallery-img" src="assets/img/knitwear/knit4.jpg" alt="Knitwear collection piece 4">
-			</div>
-			<div class="col-md-6">
-				<img class="gallery-img" src="assets/img/knitwear/knit5.jpg" alt="Knitwear collection piece 5">
+			<div class="col-md-4 col-sm-6 product-card animate fadeIn">
+				<img src="media/shop/coco_top.jpg" alt="Coco Top">
+				<h4>Coco Top</h4>
+				<p class="price">&euro;115</p>
 			</div>
 		</div>
-		<div class="row margin-top-30">
-			<div class="col-md-6">
-				<img class="gallery-img" src="assets/img/knitwear/knit6.jpg" alt="Knitwear collection piece 6">
+		<div class="row">
+			<div class="col-md-4 col-sm-6 product-card animate fadeIn">
+				<img src="media/shop/crochet_belt.jpg" alt="Crochet Belt">
+				<h4>Crochet Belt</h4>
+				<p class="price">&euro;150</p>
 			</div>
-			<div class="col-md-6">
-				<img class="gallery-img" src="assets/img/knitwear/knit7.jpg" alt="Knitwear collection piece 7">
+			<div class="col-md-4 col-sm-6 product-card animate fadeIn">
+				<img src="media/shop/grinch_bow.jpg" alt="Grinch Bow">
+				<h4>Grinch Bow</h4>
+				<p class="price">&euro;15</p>
+			</div>
+			<div class="col-md-4 col-sm-6 product-card animate fadeIn">
+				<img src="media/shop/suzanne_top.jpg" alt="Suzanne Top">
+				<h4>Suzanne Top</h4>
+				<p class="price">&euro;115</p>
 			</div>
 		</div>
 	</div>
-	<br>
+	<!-- Contact Banner -->
+	<div class="contact-banner">
+		<h3>Interested in a piece?</h3>
+		<p>All items are made to order. Get in touch for purchase inquiries, custom sizing, or to discuss bespoke commissions.</p>
+		<a href="mailto:carlacanadellm@gmail.com" class="btn">Contact Me</a>
+	</div>
 	<!-- Footer -->
 	<div id="base">
 		<div class="container padding-vert-30">
