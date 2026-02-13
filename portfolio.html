@@ -18,18 +18,87 @@
 	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Cardo" rel="stylesheet" type="text/css">
 	<style>
-		.pdf-container {
-			width: 100%;
-			height: 85vh;
-			min-height: 600px;
+		.book-viewer {
+			text-align: center;
+			margin-bottom: 20px;
 		}
-		.pdf-container embed {
-			width: 100%;
-			height: 100%;
+		.book-spread {
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			gap: 2px;
+			background: #333;
+			padding: 15px;
+			border-radius: 4px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+			min-height: 300px;
+		}
+		.book-spread canvas {
+			max-width: 50%;
+			height: auto !important;
+			box-shadow: 0 0 8px rgba(0,0,0,0.2);
+		}
+		/* Single page (cover/back) centered */
+		.book-spread.single-page {
+			justify-content: center;
+		}
+		.book-spread.single-page canvas {
+			max-width: 60%;
+		}
+		.book-controls {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 20px;
+			margin-top: 20px;
+		}
+		.book-controls button {
+			background: #193b17;
+			color: #fff;
+			border: none;
+			padding: 10px 25px;
+			border-radius: 4px;
+			font-family: 'Cardo', serif;
+			font-size: 0.95em;
+			cursor: pointer;
+			transition: background-color 0.3s ease, opacity 0.3s ease;
+		}
+		.book-controls button:hover {
+			background: #224321;
+		}
+		.book-controls button:disabled {
+			opacity: 0.3;
+			cursor: default;
+		}
+		.book-controls .page-info {
+			font-family: 'Cardo', serif;
+			color: #666;
+			font-size: 0.9em;
+			min-width: 120px;
+		}
+		.book-loading {
+			text-align: center;
+			padding: 80px 20px;
+			color: #999;
+			font-family: 'Cardo', serif;
 		}
 		.pdf-fallback {
 			text-align: center;
-			padding: 40px 20px;
+			padding: 20px;
+		}
+		@media only screen and (max-width: 767px) {
+			.book-spread {
+				flex-direction: column;
+				align-items: center;
+				gap: 10px;
+				padding: 10px;
+			}
+			.book-spread canvas {
+				max-width: 100%;
+			}
+			.book-spread.single-page canvas {
+				max-width: 100%;
+			}
 		}
 	</style>
 </head>
@@ -58,7 +127,7 @@
 						<li><span><a href="pages-editorials.html">Press &amp; Editorials</a></span></li>
 						<li><span><a href="fashion-film.html">Fashion Film</a></span></li>
 						<li><span><a href="portfolio.html">Portfolio</a></span></li>
-						<li><span><a href="https://shop.carlacanadell.com" target="_blank" rel="noopener noreferrer">SHOP</a></span></li>
+						<li><span><a href="shop.html">SHOP</a></span></li>
 					</ul>
 				</div>
 			</div>
@@ -70,11 +139,23 @@
 		<div class="row margin-vert-30">
 			<div class="col-md-12">
 				<h2>Portfolio</h2>
-				<div class="pdf-container">
-					<embed src="assets/Portfolio_Carla_Canadell_web.pdf" type="application/pdf">
+				<div class="book-viewer">
+					<div class="book-loading" id="bookLoading">Loading portfolio&hellip;</div>
+					<div class="book-spread" id="bookSpread" style="display: none;"></div>
+					<div class="book-controls" id="bookControls" style="display: none;">
+						<button id="prevBtn" onclick="prevSpread()">&larr; Previous</button>
+						<span class="page-info" id="pageInfo"></span>
+						<button id="nextBtn" onclick="nextSpread()">Next &rarr;</button>
+					</div>
 				</div>
-				<div class="pdf-fallback margin-top-20">
-					<p>Can't see the portfolio? <a href="assets/Portfolio_Carla_Canadell_web.pdf" target="_blank" class="btn btn-default">Download PDF</a></p>
+				<!-- Fallback: standard embed for local viewing / older browsers -->
+				<div class="pdf-fallback" id="pdfFallback" style="display: none;">
+					<div style="width: 100%; height: 85vh; min-height: 600px;">
+						<embed src="assets/Portfolio_Carla_Canadell_web.pdf" type="application/pdf" width="100%" height="100%">
+					</div>
+				</div>
+				<div class="pdf-fallback">
+					<p>Prefer the full file? <a href="assets/Portfolio_Carla_Canadell_web.pdf" target="_blank" class="btn btn-default">Download PDF</a></p>
 				</div>
 			</div>
 		</div>
@@ -98,7 +179,7 @@
 						<li><a href="pages-about-me.html">About</a></li>
 						<li><a href="pages-editorials.html">Press &amp; Editorials</a></li>
 						<li><a href="portfolio.html">Portfolio</a></li>
-						<li><a href="https://shop.carlacanadell.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
+						<li><a href="shop.html">Shop</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 margin-bottom-20">
@@ -125,5 +206,114 @@
 	<script src="assets/js/jquery.visible.js"></script>
 	<script src="assets/js/slimbox2.js"></script>
 	<script src="assets/js/modernizr.custom.js"></script>
+	<!-- PDF.js from CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+	<script>
+		var pdfDoc = null;
+		var currentSpread = 0;
+		var totalPages = 0;
+		var SCALE = 1.5;
+
+		// Configure PDF.js worker
+		pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+		// Get the spread ranges: page 1 alone (cover), then pairs, last alone if odd
+		function getSpreads(total) {
+			var spreads = [];
+			// First page is the cover, shown alone
+			spreads.push([1]);
+			// Pairs from page 2 onward
+			for (var i = 2; i <= total; i += 2) {
+				if (i + 1 <= total) {
+					spreads.push([i, i + 1]);
+				} else {
+					spreads.push([i]);
+				}
+			}
+			return spreads;
+		}
+
+		function renderPage(pageNum) {
+			return pdfDoc.getPage(pageNum).then(function(page) {
+				var viewport = page.getViewport({ scale: SCALE });
+				var canvas = document.createElement('canvas');
+				var context = canvas.getContext('2d');
+				canvas.width = viewport.width;
+				canvas.height = viewport.height;
+				return page.render({ canvasContext: context, viewport: viewport }).promise.then(function() {
+					return canvas;
+				});
+			});
+		}
+
+		function showSpread(index) {
+			var spreads = getSpreads(totalPages);
+			if (index < 0 || index >= spreads.length) return;
+			currentSpread = index;
+
+			var spread = spreads[index];
+			var container = document.getElementById('bookSpread');
+			container.innerHTML = '';
+
+			// Add/remove single-page class
+			if (spread.length === 1) {
+				container.classList.add('single-page');
+			} else {
+				container.classList.remove('single-page');
+			}
+
+			var promises = spread.map(function(pageNum) {
+				return renderPage(pageNum);
+			});
+
+			Promise.all(promises).then(function(canvases) {
+				canvases.forEach(function(canvas) {
+					container.appendChild(canvas);
+				});
+			});
+
+			// Update controls
+			document.getElementById('prevBtn').disabled = (index === 0);
+			document.getElementById('nextBtn').disabled = (index === spreads.length - 1);
+
+			// Page info
+			var info = '';
+			if (spread.length === 2) {
+				info = 'Pages ' + spread[0] + '–' + spread[1] + ' of ' + totalPages;
+			} else {
+				info = 'Page ' + spread[0] + ' of ' + totalPages;
+			}
+			document.getElementById('pageInfo').textContent = info;
+		}
+
+		function prevSpread() {
+			if (currentSpread > 0) showSpread(currentSpread - 1);
+		}
+
+		function nextSpread() {
+			var spreads = getSpreads(totalPages);
+			if (currentSpread < spreads.length - 1) showSpread(currentSpread + 1);
+		}
+
+		// Keyboard navigation
+		document.addEventListener('keydown', function(e) {
+			if (e.key === 'ArrowLeft') prevSpread();
+			if (e.key === 'ArrowRight') nextSpread();
+		});
+
+		// Load PDF
+		pdfjsLib.getDocument('assets/Portfolio_Carla_Canadell_web.pdf').promise.then(function(pdf) {
+			pdfDoc = pdf;
+			totalPages = pdf.numPages;
+			document.getElementById('bookLoading').style.display = 'none';
+			document.getElementById('bookSpread').style.display = 'flex';
+			document.getElementById('bookControls').style.display = 'flex';
+			showSpread(0);
+		}).catch(function(err) {
+			// PDF.js failed (likely local file:// browsing) — show embed fallback
+			document.getElementById('bookLoading').style.display = 'none';
+			document.getElementById('pdfFallback').style.display = 'block';
+		});
+	</script>
 </body>
 </html>

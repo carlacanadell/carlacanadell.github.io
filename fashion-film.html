@@ -32,6 +32,50 @@
 			height: 100%;
 			border: 0;
 		}
+		/* Fallback thumbnail link */
+		.video-thumbnail {
+			display: block;
+			position: relative;
+			max-width: 100%;
+			overflow: hidden;
+			border-radius: 4px;
+		}
+		.video-thumbnail img {
+			width: 100%;
+			height: auto;
+			display: block;
+			transition: opacity 0.3s ease;
+		}
+		.video-thumbnail:hover img {
+			opacity: 0.85;
+		}
+		.video-thumbnail .play-btn {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 80px;
+			height: 80px;
+			background: rgba(0,0,0,0.7);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: background 0.3s ease;
+		}
+		.video-thumbnail:hover .play-btn {
+			background: rgba(25,59,23,0.9);
+		}
+		.play-btn::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 15px 0 15px 28px;
+			border-color: transparent transparent transparent #fff;
+			margin-left: 5px;
+		}
 	</style>
 </head>
 <body>
@@ -59,7 +103,7 @@
 						<li><span><a href="pages-editorials.html">Press &amp; Editorials</a></span></li>
 						<li><span><a href="fashion-film.html">Fashion Film</a></span></li>
 						<li><span><a href="portfolio.html">Portfolio</a></span></li>
-						<li><span><a href="https://shop.carlacanadell.com" target="_blank" rel="noopener noreferrer">SHOP</a></span></li>
+						<li><span><a href="shop.html">SHOP</a></span></li>
 					</ul>
 				</div>
 			</div>
@@ -72,8 +116,9 @@
 			<div class="col-md-12">
 				<h2>Fashion Film</h2>
 				<div class="video-responsive">
-					<iframe src="https://www.youtube.com/embed/eY1uHPJn7UE" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Carla Canadell Fashion Film"></iframe>
+					<iframe width="100%" height="506" src="https://www.youtube.com/embed/eY1uHPJn7UE" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
+				<p class="text-center margin-top-20"><small>Video not loading? <a href="https://www.youtube.com/watch?v=eY1uHPJn7UE" target="_blank" rel="noopener noreferrer">Watch on YouTube &rarr;</a></small></p>
 			</div>
 		</div>
 	</div>
@@ -96,7 +141,7 @@
 						<li><a href="pages-about-me.html">About</a></li>
 						<li><a href="pages-editorials.html">Press &amp; Editorials</a></li>
 						<li><a href="portfolio.html">Portfolio</a></li>
-						<li><a href="https://shop.carlacanadell.com" target="_blank" rel="noopener noreferrer">Shop</a></li>
+						<li><a href="shop.html">Shop</a></li>
 					</ul>
 				</div>
 				<div class="col-md-4 margin-bottom-20">

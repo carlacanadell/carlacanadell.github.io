@@ -22,6 +22,11 @@
     border-color: #193b17 !important;
 }
 
+/* Fix nav hover being covered by logo */
+#hornav {
+    z-index: 30;
+}
+
 /* Smooth transitions */
 a {
     transition: color 0.3s ease, opacity 0.3s ease;
@@ -54,6 +59,11 @@ img {
 }
 .carousel-control:hover {
     opacity: 1;
+}
+
+/* Footer headings - pale pink */
+#base h3 {
+    color: #f0c4cd;
 }
 
 /* Footer social icons */
