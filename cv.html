@@ -88,6 +88,12 @@
 		#cv-page .cv-muted {
 			color: #4f4f4f;
 		}
+		.print-only {
+			display: none;
+		}
+		.screen-only {
+			display: block;
+		}
 		@media (max-width: 767px) {
 			#cv-page .cv-main,
 			#cv-page .cv-sidebar,
@@ -97,24 +103,57 @@
 		}
 		@page {
 			size: A4;
-			margin: 14mm 12mm;
+			margin: 11mm 11mm;
 		}
 		@media print {
+			.print-only {
+				display: block !important;
+			}
+			.screen-only {
+				display: none !important;
+			}
 			#pre_header,
 			#header,
 			#base,
-			script {
+			#hornav,
+			#slicknav_menu,
+			.slicknav_menu,
+			.slicknav_btn,
+			.logo,
+			script,
+			.visible-lg,
+			.visible-md,
+			.visible-sm,
+			.visible-xs {
 				display: none !important;
+				visibility: hidden !important;
+				height: 0 !important;
+				overflow: hidden !important;
 			}
 			html,
 			body {
 				background: #ffffff !important;
 				color: #000000 !important;
+				opacity: 1 !important;
+				animation: none !important;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			body * {
+				color: #000000 !important;
+				opacity: 1 !important;
+				text-shadow: none !important;
+				animation: none !important;
+				transition: none !important;
 			}
 			#content.container {
 				width: 100% !important;
 				padding: 0 !important;
 				margin: 0 !important;
+			}
+			#cv-page {
+				margin: 0 !important;
+				padding: 0 !important;
 			}
 			#cv-page .row {
 				margin: 0 !important;
@@ -122,14 +161,15 @@
 			#cv-page .col-md-8,
 			#cv-page .col-md-4 {
 				float: left !important;
-				padding-left: 8px !important;
-				padding-right: 8px !important;
+				padding-left: 6px !important;
+				padding-right: 6px !important;
+				margin-bottom: 8px !important;
 			}
 			#cv-page .col-md-8 {
-				width: 64% !important;
+				width: 66% !important;
 			}
 			#cv-page .col-md-4 {
-				width: 36% !important;
+				width: 34% !important;
 			}
 			#cv-page .cv-intro,
 			#cv-page .cv-main,
@@ -137,52 +177,70 @@
 				background: #ffffff !important;
 				border: 1px solid #cfcfcf !important;
 				box-shadow: none !important;
+				padding: 11px 13px !important;
 			}
 			#cv-page .cv-intro {
 				border-left: 4px solid #8b5a72 !important;
-				margin-bottom: 14px !important;
+				margin-bottom: 8px !important;
 			}
 			#cv-page h2 {
-				font-size: 28px !important;
+				font-size: 24px !important;
 				margin-top: 0 !important;
 			}
 			#cv-page h3 {
-				font-size: 17px !important;
+				font-size: 16px !important;
 				letter-spacing: 0.8px !important;
-				margin-bottom: 4px !important;
+				margin-bottom: 3px !important;
 			}
 			#cv-page h4 {
 				font-size: 16px !important;
 				line-height: 1.3 !important;
-				margin-top: 12px !important;
-				margin-bottom: 4px !important;
+				margin-top: 10px !important;
+				margin-bottom: 3px !important;
 			}
 			#cv-page p,
 			#cv-page li {
-				font-size: 13.5px !important;
-				line-height: 1.45 !important;
+				font-size: 12.2px !important;
+				line-height: 1.31 !important;
 				color: #000000 !important;
-				margin-bottom: 8px !important;
+				margin-bottom: 4px !important;
+			}
+			#cv-page ul {
+				margin-top: 1px !important;
+				margin-bottom: 6px !important;
+				padding-left: 16px !important;
 			}
 			#cv-page hr {
-				margin: 8px 0 12px !important;
+				margin: 5px 0 7px !important;
 				border-top: 1px solid #c9c9c9 !important;
 			}
 			#cv-page a,
 			#cv-page a:visited {
 				color: #000000 !important;
-				text-decoration: none !important;
+				text-decoration: underline !important;
+				font-size: inherit !important;
+				line-height: inherit !important;
+				font-weight: inherit !important;
 			}
-			#cv-page h3,
-			#cv-page h4,
-			#cv-page p,
-			#cv-page ul,
-			#cv-page li,
+			#cv-page a[href]:after {
+				content: none !important;
+			}
 			#cv-page .cv-intro,
 			#cv-page .cv-main,
-			#cv-page .cv-sidebar {
-				break-inside: avoid-page;
-				page-break-inside: avoid;
+			#cv-page .cv-sidebar,
+			#cv-page p,
+			#cv-page ul,
+			#cv-page li {
+				break-inside: auto;
+				page-break-inside: auto;
+			}
+			#cv-page h3,
+			#cv-page h4 {
+				break-after: avoid-page;
+				page-break-after: avoid;
+			}
+			#cv-page .cv-main h3.margin-top-40 {
+				margin-top: 14px !important;
 			}
 		}
 	</style>
@@ -223,7 +281,7 @@
 		<div class="row margin-vert-30">
 			<div class="col-md-12">
 				<div class="cv-intro">
-					<h2>Curriculum Vitae</h2>
+					<h2>Carla Canadell - Curriculum Vitae</h2>
 					<p>Fashion and textile designer specialized in knitwear, with professional experience in international and local fashion studios. Adaptable, creative, and collaborative, with strong communication skills and a solid background in garment construction, textile development, and hands-on atelier production.</p>
 				</div>
 			</div>
@@ -237,37 +295,47 @@
 
 				<h4>Fashion Designer</h4>
 				<p class="cv-muted"><strong>Pronovias</strong>, Barcelona &middot; Oct 2023 - Present</p>
-				<p>Designer for Les Accessoires and total-look proposals, with work across product development and design collaborations with international brands. Contribute to runway trend research for couture and bridal collections, concept and moodboard creation, supplier development, and tech packs.</p>
-				<ul>
+				<p class="screen-only">Designer for Les Accessoires and total-look proposals, with work across product development and design collaborations with international brands. Contribute to runway trend research for couture and bridal collections, concept and moodboard creation, supplier development, and tech packs.</p>
+				<ul class="screen-only">
 					<li>Curator for temporary exhibitions at the Pronovias Museum</li>
 					<li>Backstage fitting and fashion show organization</li>
 					<li>VIP fashion illustrations, product presentations, and training materials</li>
 					<li>Contributor to the Innovation Hub initiative and dress naming across collections</li>
 				</ul>
+				<p class="print-only">Leads accessories and total-look proposals, combining trend research, concept development, and product design for bridal and couture collections.</p>
+				<ul class="print-only">
+					<li>Develops tech packs and supplier follow-up for international collaborations.</li>
+					<li>Supports runway operations, museum projects, and VIP presentation content.</li>
+				</ul>
 
 				<h4>Atelier Assistant &amp; Seamstress</h4>
 				<p class="cv-muted"><strong>Iris van Herpen</strong>, Amsterdam &middot; Feb 2023 - Sep 2023</p>
-				<p>Worked in the couture atelier developing and restoring Haute Couture collections. Responsibilities included hand and machine sewing, pattern development, sourcing, hand embroidery, moulage, and visual support work. Contributed to the <em>Architectonics</em> collection presented at Paris Fashion Week, assisted backstage, and supported client-facing showroom activity. Also worked on bespoke commissions, including a gown worn by Beyonc&eacute; during the Renaissance tour in Amsterdam.</p>
-				<ul>
+				<p class="screen-only">Worked in the couture atelier developing and restoring Haute Couture collections. Responsibilities included hand and machine sewing, pattern development, sourcing, hand embroidery, moulage, and visual support work. Contributed to the <em>Architectonics</em> collection presented at Paris Fashion Week, assisted backstage, and supported client-facing showroom activity. Also worked on bespoke commissions, including a gown worn by Beyonc&eacute; during the Renaissance tour in Amsterdam.</p>
+				<ul class="screen-only">
 					<li>Hand and machine sewing for couture garments</li>
 					<li>Technique research with silicone, pigments, laser cutting, and draping</li>
 					<li>Pattern and sample preparation for collection pieces</li>
 					<li>Contributed to the exhibition <em>Sculpting the Senses</em> at Mus&eacute;e des Arts D&eacute;coratifs (Paris)</li>
+				</ul>
+				<p class="print-only">Worked across collection development and restoration in a Haute Couture atelier, contributing to the <em>Architectonics</em> season and bespoke pieces.</p>
+				<ul class="print-only">
+					<li>Executed couture handwork, sewing, moulage, embroidery, and pattern support under high-pressure timelines.</li>
+					<li>Supported Paris Fashion Week backstage and showroom client service.</li>
 				</ul>
 
 				<h4>Knitwear Designer</h4>
 				<p class="cv-muted"><strong>Maison Ullens</strong>, Brussels &middot; Jan 2022 - Jun 2022</p>
 				<p>Designed a knitwear sample collection by reusing in-stock yarns and developing applications for accessories, produced on a semi-industrial knitting machine.</p>
 
-				<h4>Sales Associate</h4>
-				<p class="cv-muted"><strong>The Kooples</strong>, Barcelona &middot; Jun 2021 - Sep 2021</p>
+				<!-- <h4>Sales Associate</h4>
+				<p class="cv-muted"><strong>The Kooples</strong>, Barcelona &middot; Jun 2021 - Sep 2021</p> -->
 
 				<h4>Fashion Atelier &amp; Marketing Assistant</h4>
 				<p class="cv-muted"><strong>Cortana</strong>, Barcelona &middot; Mar 2019 - Sep 2019</p>
 				<p>Supported atelier and production tasks including fabric cutting, patternmaking, bridal sewing, supplier communication, and hand-drawn print development. Managed online order workflows and contributed to website and online shop updates.</p>
 
-				<h4>Retail Sales Specialist</h4>
-				<p class="cv-muted"><strong>Sitgetana SL</strong>, Barcelona &middot; Mar 2019 - Jan 2021</p>
+				<!-- <h4>Retail Sales Specialist</h4>
+				<p class="cv-muted"><strong>Sitgetana SL</strong>, Barcelona &middot; Mar 2019 - Jan 2021</p> -->
 
 				<h4>Fashion Assistant</h4>
 				<p class="cv-muted"><strong>La Mona de Seda</strong>, Barcelona &middot; Jun 2018 - Sep 2018</p>
@@ -281,16 +349,18 @@
 				<hr>
 				<h4>Master's Degree in Textile Design (Knitting)</h4>
 				<p class="cv-muted"><strong>Acad&eacute;mie Royale des Beaux-Arts de Bruxelles</strong>, Brussels &middot; 2022</p>
+				<p class="print-only">Included knit project exhibition at Espace Vanderborght, Brussels.</p>
 
 				<h4>Bachelor's Degree in Fashion Design</h4>
 				<p class="cv-muted"><strong>Istituto Europeo di Design (IED)</strong>, Barcelona &middot; 2018</p>
+				<p class="print-only">Final degree collection presented at 080 Barcelona Fashion Week.</p>
 
 				<h4>Jewellery Studies</h4>
 				<p class="cv-muted"><strong>La Casa de la Espiral</strong>, Barcelona &middot; 2018 - 2019</p>
 
-				<h3 class="margin-top-40">Publications &amp; Shows</h3>
-				<hr>
-				<ul>
+				<h3 class="margin-top-40 screen-only">Publications &amp; Shows</h3>
+				<hr class="screen-only">
+				<ul class="screen-only">
 					<li>Knit project exhibition at Espace Vanderborght, Brussels</li>
 					<li>Fashion show of final degree collection at 080 Barcelona Fashion Week</li>
 				</ul>
@@ -301,10 +371,9 @@
 				<div class="cv-sidebar">
 				<h3>Details</h3>
 				<hr>
-				<p><strong>Name:</strong><br>Carla Canadell Montes</p>
 				<p><strong>Location:</strong><br>Barcelona, Catalonia, Spain</p>
 				<p><strong>Email:</strong><br><a href="mailto:carlacanadellm@gmail.com">carlacanadellm@gmail.com</a></p>
-				<p><strong>LinkedIn:</strong><br><a href="https://www.linkedin.com/in/carla-canadell-montes-b36069180/" target="_blank" rel="noopener noreferrer">linkedin.com/in/carla-canadell-montes-b36069180</a></p>
+				<p><strong>LinkedIn:</strong><br><a href="https://www.linkedin.com/in/carla-canadell-montes-b36069180/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
 				<p><strong>Nationality:</strong><br>Spanish</p>
 				<p><strong>Website:</strong><br><a href="https://carlacanadell.com/" target="_blank" rel="noopener noreferrer">carlacanadell.com</a></p>
 
